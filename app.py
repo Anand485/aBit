@@ -72,7 +72,7 @@ if st.button("Get Detailed Notes"):
         - suggestion 3
         - suggestion 4
         """
-        perks,messages = get_response(transcript_text,prompt)
+        perks,messages = get_response(prompt,messages)
         st.markdown("## Detailed Notes:")
         st.write(perks)
     else:
