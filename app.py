@@ -1,15 +1,9 @@
-import streamlit as st 
-from dotenv import load_dotenv
-load_dotenv()
-
+import streamlit as st
 import os
-import google.generativeai as genai 
-
+from openai import OpenAI
 from youtube_transcript_api import YouTubeTranscriptApi 
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-prompt = """You are Youtube video sumaarizer.You will be taking the transcript text and summarizing the entire video"""
+client = OpenAI(api_key=st.secrets["OpenAI_api_key"])
 
 def extract_transcript_details(youtube_video_url):
     try:
@@ -25,11 +19,25 @@ def extract_transcript_details(youtube_video_url):
     except Exception as e:
         raise e 
 
-def generate_gemini_content(transcript_text,prompt):
+# def generate_gemini_content(transcript_text,prompt):
     
-    model = genai.GenerativeModel("gemini-pro")
-    response = model.generate_content(prompt+transcript_text)
-    return response.text 
+#     model = genai.GenerativeModel("gemini-pro")
+#     response = model.generate_content(prompt+transcript_text)
+#     return response.text 
+def get_response(prompt, messages, model="gpt-3.5-turbo"):
+    messages.append({"role": 'user', "content": prompt})
+    response = client.chat.completions.create(
+        messages= messages,
+        model = model
+    )
+    messages.append({
+        "role": response.choices[0].message.role,
+        "content": response.choices[0].message.content
+    })
+    return response.choices[0].message.content, messages
+
+messages = [
+    {"role": "system", "content": "You are a helpful assistant."}]
 
 st.title("Youtube Transcript to Detailed Notes Converter")
 youtube_link = st.text_input("Enter Youtube Video Link:")
@@ -42,8 +50,29 @@ if youtube_link:
 if st.button("Get Detailed Notes"):
     transcript_text = extract_transcript_details(youtube_link)
     
-    if transcript_text:
-        summary = generate_gemini_content(transcript_text,prompt)
+    prompt = "I will provide you a transcription of a video, acknowledge the transcription and wait for instructions."
+    _, messages = get_response(prompt, messages)
+    length = len(transcript_text.split(" "))
+    if length > 0:
+        i = 0
+        while i <= length:
+            if i + 3000 <= length:
+                prompt = transcript_text[i:i+3000]
+            else:
+                prompt = transcript_text[i:]
+            i += 3000
+            _, messages = get_response(prompt, messages)
+        
+        prompt = """Now based on the above transcript provide me some perk ideas for my members.
+        Output Format:
+        - suggestion 1
+        - suggestion 2
+        - suggestion 3
+        - suggestion 4
+        """
+        perks,messages = get_response(transcript_text,prompt)
         st.markdown("## Detailed Notes:")
-        st.write(summary)
+        st.write(perks)
+    else:
+        st.write("No transcript data found for the video.")
         
