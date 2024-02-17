@@ -73,7 +73,7 @@ if st.button("Get Detailed Notes"):
         - suggestion 4
         """
         perks,messages = get_response(prompt,messages)
-        st.markdown("## Detailed Notes:")
+        st.markdown("## Perks:")
         st.write(perks)
     else:
         st.write("No transcript data found for the video.")
