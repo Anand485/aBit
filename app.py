@@ -38,8 +38,8 @@ def get_response(prompt, messages, model="gpt-3.5-turbo"):
     })
     return response.choices[0].message.content, messages
 
-messages = [
-    {"role": "system", "content": "You are a helpful assistant."}]
+messages = []
+messages.append({"role": "system", "content": "You are a helpful assistant."})
 
 st.title("Youtube Transcript to Detailed Notes Converter")
 youtube_link = st.text_input("Enter Youtube Video Link:")
