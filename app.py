@@ -5,8 +5,6 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 client = OpenAI(api_key=st.secrets["OpenAI_api_key"])
 
-prompt = """You are Youtube video sumaarizer.You will be taking the transcript text and summarizing the entire video"""
-
 def extract_transcript_details(youtube_video_url):
     try:
         video_id = youtube_video_url.split("=")[1]
@@ -65,16 +63,20 @@ if st.button("Get Detailed Notes"):
             i += 3000
             _, messages = get_response(prompt, messages)
         
-        prompt = """Now based on the above transcript provide me some perk ideas for my members.
+        prompt = f"""Now based on the above transcript provide me some perk ideas for my members.
         Output Format:
-        - suggestion 1
-        - suggestion 2
-        - suggestion 3
-        - suggestion 4
+        ## Summary : 
+        <summary>
+        ---
+        ## Perks : 
+        - <suggestion 1>
+        - <suggestion 2>
+        - <suggestion 3>
+        - <suggestion 4>
         """
         perks,messages = get_response(prompt,messages)
-        st.markdown("## Perks:")
-        st.write(perks)
+        st.markdown(perks)
+        # st.write(perks)
     else:
         st.write("No transcript data found for the video.")
         
