@@ -69,7 +69,7 @@ if st.button("Get Detailed Notes"):
         <summary>
         ---
         ## Perks : 
-        - Tell me for personalized information about the creator.How they building the things?how they working?
+        - Tell me about the specific content that he provides.what he/she doing in that video ? 
         - Give me about the competitor how this different from another similar content.
         - tell me about the content 
         """
