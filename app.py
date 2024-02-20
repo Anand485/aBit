@@ -72,7 +72,6 @@ if st.button("Get Detailed Notes"):
         - Tell me for personalized information about the creator. 
         - <suggestion 2>
         - <suggestion 3>
-        - <suggestion 4>
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
