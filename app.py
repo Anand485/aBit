@@ -71,7 +71,7 @@ if st.button("Get Detailed Notes"):
         ## Perks : 
         - Tell me for personalized information about the creator.How they building the things?how they working?
         - Give me about the competitor how this different from another similar content.
-        - <suggestion 3>
+        - tell me about the content 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
