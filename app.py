@@ -69,7 +69,7 @@ if st.button("Get Detailed Notes"):
         <summary>
         ---
         ## Perks : 
-        - Tell me for personalized information about the creator. 
+        - Tell me for personalized information about the creator.How they building the things?how they working?
         - <suggestion 2>
         - <suggestion 3>
         """
