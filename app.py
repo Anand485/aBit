@@ -69,8 +69,8 @@ if st.button("Get Detailed Notes"):
         <summary>
         ---
         ## Perks : 
-        - Tell me about the specific perks that he should provides to user from that video ? 
-        - Give me that perks how this perks to unqiuely .
+        - Deep dive into ‘The sound of silence’ through the director’s analytical lens.
+        - One of you from US will get a studio tour and meet the JOE team (secret gift waiting for you in the studio, get excited BRU).
         - tell me about the creator that how is perks are different from other creators ? 
         - Tell about how life style of creator that attracts the users 
         """
