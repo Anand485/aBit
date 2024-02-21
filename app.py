@@ -63,15 +63,15 @@ if st.button("Get Detailed Notes"):
             i += 3000
             _, messages = get_response(prompt, messages)
         
-        prompt = f"""Now based on the above transcript provide me some perk ideas for my members.
+        prompt = f"""Now based on the above transcript provide me some perk ideas for my members that not only about the content but the tell about creator also.
         Output Format:
         ## Summary : 
         <summary>
         ---
         ## Perks : 
         - Tell me about the specific content that he provides.what he/she doing in that video ? 
-        - Give me about the competitor how this different from another similar content.
-        - tell me about the content 
+        - Give me about the competitor how this different from another similar creator.
+        - tell me about the creator 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
