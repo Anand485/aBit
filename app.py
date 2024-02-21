@@ -72,6 +72,7 @@ if st.button("Get Detailed Notes"):
         - Tell me about the specific content that he provides.what he/she doing in that video ? 
         - Give me about the competitor how this different from another similar creator.
         - tell me about the creator 
+        - Tell about how life style of creator that attracts the users 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
