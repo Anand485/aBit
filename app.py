@@ -69,9 +69,9 @@ if st.button("Get Detailed Notes"):
         <summary>
         ---
         ## Perks : 
-        - Tell me about the specific content that he provides.what he/she doing in that video ? 
-        - Give me about the competitor how this different from another similar creator.
-        - tell me about the creator 
+        - Tell me about the specific perks that he should provides to user from that video ? 
+        - Give me that perks how this perks to unqiuely .
+        - tell me about the creator that how is perks are different from other creators ? 
         - Tell about how life style of creator that attracts the users 
         """
         perks,messages = get_response(prompt,messages)
