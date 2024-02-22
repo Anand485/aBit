@@ -73,6 +73,8 @@ if st.button("Get Detailed Notes"):
         - One of you from US will get a studio tour and meet the JOE team (secret gift waiting for you in the studio, get excited BRU).
         - tell me about the creator that how is perks are different from other creators ? 
         - Tell about how life style of creator that attracts the users 
+        - Suggestion 5 
+        - Suggestion 6 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
