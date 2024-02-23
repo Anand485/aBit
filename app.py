@@ -63,7 +63,7 @@ if st.button("Get Detailed Notes"):
             i += 3000
             _, messages = get_response(prompt, messages)
         
-        prompt = f"""Now based on the above transcript provide me some perk ideas for my members that not only about the content but the tell about creator also.
+        prompt = f"""Explore the multifaceted advantages of being a YouTube creator by leveraging the YouTube API and engaging in prompt engineering. Dive into the unique benefits that extend beyond content creation, such as community building, analytics-driven growth, monetization strategies, and harnessing the power of YouTube's vast ecosystem. Highlight the tools, insights, and opportunities that arise from integrating with the YouTube API, and delve into the ways creators can thrive in the dynamic landscape of online content creation. Uncover the perks that go beyond crafting compelling videos, emphasizing the broader spectrum of possibilities for success, influence, and innovation within the YouTube creator community
         Output Format:
         ## Summary : 
         <summary>
