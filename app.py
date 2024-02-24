@@ -63,13 +63,13 @@ if st.button("Get Detailed Notes"):
             i += 3000
             _, messages = get_response(prompt, messages)
         
-        prompt = f"""Here is the link of the video. Come up with perk ideas, which fans could enjoy alongside the creator.
+        prompt = f"""Now based on the above transcript provide me some perk ideas for my members.
         Output Format:
         ## Summary : 
         <summary>
         ---
         ## Perks : 
-        - Suggestion 1
+        - Tell me for personalized information about the creator.
         - Suggestion 2 
         - Suggestion 3 
         - Suggestion 4 
