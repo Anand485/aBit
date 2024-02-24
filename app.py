@@ -63,18 +63,16 @@ if st.button("Get Detailed Notes"):
             i += 3000
             _, messages = get_response(prompt, messages)
         
-        prompt = f"""Explore the multifaceted advantages of being a YouTube creator by leveraging the YouTube API and engaging in prompt engineering. Dive into the unique benefits that extend beyond content creation, such as community building, analytics-driven growth, monetization strategies, and harnessing the power of YouTube's vast ecosystem. Highlight the tools, insights, and opportunities that arise from integrating with the YouTube API, and delve into the ways creators can thrive in the dynamic landscape of online content creation. Uncover the perks that go beyond crafting compelling videos, emphasizing the broader spectrum of possibilities for success, influence, and innovation within the YouTube creator community
+        prompt = f"""Here is the link of the video. Come up with perk ideas, which fans could enjoy alongside the creator.
         Output Format:
         ## Summary : 
         <summary>
         ---
         ## Perks : 
-        - Deep dive into ‘The sound of silence’ through the director’s analytical lens.
-        - One of you from US will get a studio tour and meet the JOE team (secret gift waiting for you in the studio, get excited BRU).
-        - tell me about the creator that how is perks are different from other creators ? 
-        - Tell about how life style of creator that attracts the users 
-        - Suggestion 5 
-        - Suggestion 6 
+        - Suggestion 1
+        - Suggestion 2 
+        - Suggestion 3 
+        - Suggestion 4 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
