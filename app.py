@@ -73,6 +73,7 @@ if st.button("Get Detailed Notes"):
         - Suggestion 2 
         - Suggestion 3 
         - Suggestion 4 
+        - Suggestion 5 
         """
         perks,messages = get_response(prompt,messages)
         st.markdown(perks)
