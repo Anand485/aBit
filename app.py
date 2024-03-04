@@ -3,7 +3,7 @@ import os
 from openai import OpenAI
 from youtube_transcript_api import YouTubeTranscriptApi 
 
-client = Open(api_key=st.secrets["OpenAI_api_key"])
+client = OpenAI(api_key=st.secrets["OpenAI_api_key"])
 
 def extract_transcript_details(youtube_video_url):
     try:
